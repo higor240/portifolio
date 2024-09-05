@@ -8,9 +8,9 @@ const Hero = () => {
 
   const StyledHero = styled("div")(({ theme }) => ({
     backgroundColor: theme.palette.primary.main,
-    Height: "100vh",
+    height: "120vh",
     display: "flex",
-    alignItems: "center"
+    alignItems: "center",
   }))
 
   const StyledImg = styled("img")(({ theme }) => ({
@@ -30,7 +30,7 @@ const Hero = () => {
             <Grid item xs={12} md={5}>
               <Box position="relative">
                 <Box position="absolute" width={"100%"} top={100} right={0}>
-                  <AnimatedBackground/>
+                  <AnimatedBackground />
 
                 </Box>
                 <Box position="relative" textAlign="center">
@@ -43,19 +43,19 @@ const Hero = () => {
 
             <Grid item xs={12} md={7}>
               <Typography color="primary.contrastText" variant="h1" textAlign="center" pb={(2)}>Higor Ferreira</Typography>
-              <Typography color="primary.contrastText" variant="h2" textAlign="center">I'm fullstack developer</Typography>
+              <Typography color="primary.contrastText" variant="h2" textAlign="center">Desenvolvedor Fullstack</Typography>
               <Grid container display="flex" justifyContent="center" spacing={3}>
-                <Grid item xs={12} md={4} display="flex" justifyContent="center"> pt=(3)
+                <Grid item xs={12} md={4} display="flex" justifyContent="center" pt={(3)}>
                   <StyledButton>
                     <DownloadIcon />
                     <Typography>
-                      Download CV
+                      Currículo
                     </Typography>
                   </StyledButton>
                 </Grid>
                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
                   <StyledButton>
-                    <EmailIcon />Contact me
+                    <EmailIcon />Contato
                   </StyledButton>
                 </Grid>
 
