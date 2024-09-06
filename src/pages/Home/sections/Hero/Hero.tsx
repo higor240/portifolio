@@ -11,14 +11,14 @@ const Hero = () => {
     height: "120vh",
     display: "flex",
     alignItems: "center",
-    [theme.breakpoints.up('xs')]:{
+    [theme.breakpoints.up('xs')]: {
       paddingTop: "100px"
 
     },
-    [theme.breakpoints.up('md')]:{
+    [theme.breakpoints.up('md')]: {
       paddingTop: "0"
 
-      
+
     }
   }))
 
@@ -55,7 +55,7 @@ const Hero = () => {
               <Typography color="primary.contrastText" variant="h2" textAlign="center">Desenvolvedor Fullstack</Typography>
               <Grid container display="flex" justifyContent="center" spacing={3}>
                 <Grid item xs={12} md={4} display="flex" justifyContent="center" pt={(3)}>
-                  <StyledButton>
+                  <StyledButton onClick={()=> console.log("Download")}>
                     <DownloadIcon />
                     <Typography>
                       Currículo
@@ -63,7 +63,7 @@ const Hero = () => {
                   </StyledButton>
                 </Grid>
                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                  <StyledButton>
+                  <StyledButton onClick={()=> console.log("Contato")}>
                     <EmailIcon />Contato
                   </StyledButton>
                 </Grid>
