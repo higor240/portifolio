@@ -4,7 +4,21 @@ import { Box, Container, Grid, styled, Typography } from "@mui/material"
 import Avatar from "../../../../assets/images/avatar.jpg"
 import StyledButton from '../../../../components/StyledButton/StyledButton';
 import { AnimatedBackground } from '../../../../components/AnimatedBackground/AnimatedBackground';
+import { useState } from 'react';
 const Hero = () => {
+
+  const [showContact, setShowContact] = useState(false);
+
+  const downloadCurriculo = () => {
+    const link = document.createElement('a');
+    link.href = '/assets/curriculo.pdf'; // Caminho para o PDF dentro do seu projeto
+    link.download = 'Curriculo_Higor_Ferreira.pdf'; // Nome do arquivo para o download
+    link.click(); // Simula o clique no link para iniciar o download
+  };
+
+  const toggleContactInfo = () => {
+    setShowContact(!showContact);
+  }
 
   const StyledHero = styled("div")(({ theme }) => ({
     backgroundColor: theme.palette.primary.main,
@@ -21,6 +35,8 @@ const Hero = () => {
 
     }
   }))
+
+
 
   const StyledImg = styled("img")(({ theme }) => ({
     width: "75%",
@@ -55,7 +71,7 @@ const Hero = () => {
               <Typography color="primary.contrastText" variant="h2" textAlign="center">Desenvolvedor Fullstack</Typography>
               <Grid container display="flex" justifyContent="center" spacing={3}>
                 <Grid item xs={12} md={4} display="flex" justifyContent="center" pt={(3)}>
-                  <StyledButton onClick={()=> console.log("Download")}>
+                  <StyledButton onClick={() => downloadCurriculo()}>
                     <DownloadIcon />
                     <Typography>
                       Currículo
@@ -63,22 +79,26 @@ const Hero = () => {
                   </StyledButton>
                 </Grid>
                 <Grid item xs={12} md={4} display="flex" justifyContent="center">
-                  <StyledButton onClick={()=> console.log("Contato")}>
-                    <EmailIcon />Contato
+                  <StyledButton onClick={toggleContactInfo}>
+                    <EmailIcon />
+                    <Typography>
+                      Contato
+                    </Typography>
                   </StyledButton>
                 </Grid>
-
               </Grid>
+              {showContact && (
+                <Box mt={4} textAlign="center">
+                  <Typography color="primary.contrastText">E-mail: higorferreira2402gmail.com</Typography>
+                  <Typography color="primary.contrastText">Telefone: (38) 99843-6730</Typography>
+                </Box>
+              )}
 
 
 
             </Grid>
           </Grid>
         </Container>
-
-
-
-
       </StyledHero>
 
     </>
