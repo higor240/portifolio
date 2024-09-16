@@ -11,9 +11,9 @@ const Hero = () => {
 
   const downloadCurriculo = () => {
     const link = document.createElement('a');
-    link.href = '/assets/curriculo.pdf'; // Caminho para o PDF dentro do seu projeto
-    link.download = 'Curriculo_Higor_Ferreira.pdf'; // Nome do arquivo para o download
-    link.click(); // Simula o clique no link para iniciar o download
+    link.href = '/assets/curriculo.pdf'; 
+    link.download = 'Curriculo_Higor_Ferreira.pdf'; 
+    link.click(); 
   };
 
   const toggleContactInfo = () => {
@@ -89,7 +89,7 @@ const Hero = () => {
               </Grid>
               {showContact && (
                 <Box mt={4} textAlign="center">
-                  <Typography color="primary.contrastText">E-mail: higorferreira2402gmail.com</Typography>
+                  <Typography color="primary.contrastText">E-mail: higorferreira240@gmail.com</Typography>
                   <Typography color="primary.contrastText">Telefone: (38) 99843-6730</Typography>
                 </Box>
               )}
